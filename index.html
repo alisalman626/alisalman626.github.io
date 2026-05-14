@@ -1,30 +1,435 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ali Salman | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Salman | Medical Robotics Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.25), transparent 35%),
+        #0f172a;
+    }
+
+    .hero {
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #38bdf8;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 0 auto 30px;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+    }
+
+    .btn-secondary {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      padding: 15px 20px;
+    }
+
+    nav ul {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ffffff;
+      border-left: 5px solid #38bdf8;
+      padding-left: 15px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .about p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .experience-card h3 {
+      color: #38bdf8;
+      margin-bottom: 12px;
+    }
+
+    .skill-card ul {
+      list-style: none;
+    }
+
+    .skill-card li {
+      margin-bottom: 8px;
+      color: #cbd5e1;
+    }
+
+    .project-card p,
+    .experience-card p {
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Ali Salman</h1>
-  <h2>Medical Robotics Engineering Student</h2>
 
-  <p>
-    I am a Master's student in Medical Robotics Engineering, interested in
-    robotics, RGB-D perception, ROS 2, 3D reconstruction, and medical robotic systems.
-  </p>
+  <header>
+    <div class="hero">
+      <h1>Ali Salman</h1>
+      <h2>Medical Robotics Engineering Student</h2>
+      <p>
+        I am a Master's student in Medical Robotics Engineering, focused on robotics,
+        RGB-D perception, 3D reconstruction, ROS 2, and medical robotic systems.
+        My work connects computer vision, robotic sensing, calibration, and real-world
+        system integration.
+      </p>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>RGB-D Surface Reconstruction Pipeline</li>
-    <li>ROS 2 Robotic Scanning System</li>
-    <li>KUKA iiwa / KUKA Med7 Robotic Platform Work</li>
-  </ul>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+  </header>
 
-  <h2>Skills</h2>
-  <p>Python, ROS 2, OpenCV, Open3D, PyTorch, TensorFlow, MoveIt, Gazebo, KUKA iiwa</p>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <h2>Contact</h2>
-  <p>Email: ali0slman27@gmail.com</p>
-  <p>GitHub: https://github.com/alisalman626</p>
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+      <p>
+        I am interested in the development of intelligent robotic systems for medical
+        and industrial applications. My current work focuses on robotic RGB-D scanning,
+        surface reconstruction, hand-eye calibration, and integrating perception
+        pipelines with robotic platforms.
+      </p>
+      <br />
+      <p>
+        I enjoy working at the intersection of robotics, computer vision, and software
+        engineering, especially when building complete systems that move from sensing
+        to reconstruction and robotic execution.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+      <div class="card skill-card">
+        <h3>Robotics</h3>
+        <ul>
+          <li>ROS 2</li>
+          <li>MoveIt</li>
+          <li>Gazebo</li>
+          <li>Hand-eye calibration</li>
+          <li>KUKA iiwa 14</li>
+          <li>KUKA Med7</li>
+        </ul>
+      </div>
+
+      <div class="card skill-card">
+        <h3>Computer Vision & 3D</h3>
+        <ul>
+          <li>RGB-D perception</li>
+          <li>Point clouds</li>
+          <li>3D reconstruction</li>
+          <li>Mesh generation</li>
+          <li>OpenCV</li>
+          <li>Open3D</li>
+        </ul>
+      </div>
+
+      <div class="card skill-card">
+        <h3>Machine Learning</h3>
+        <ul>
+          <li>PyTorch</li>
+          <li>TensorFlow</li>
+          <li>Segmentation models</li>
+          <li>Depth refinement</li>
+          <li>scikit-learn</li>
+        </ul>
+      </div>
+
+      <div class="card skill-card">
+        <h3>Programming & Tools</h3>
+        <ul>
+          <li>Python</li>
+          <li>C++ basics</li>
+          <li>Git / GitHub</li>
+          <li>Linux / Ubuntu</li>
+          <li>Docker</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+      <div class="card project-card">
+        <h3>Robotic RGB-D Surface Reconstruction</h3>
+        <p>
+          Development of a pipeline for scanning objects with an RGB-D camera,
+          refining depth data, fusing multiple views, and generating accurate
+          3D meshes.
+        </p>
+        <div class="tag-list">
+          <span class="tag">RGB-D</span>
+          <span class="tag">Open3D</span>
+          <span class="tag">Point Clouds</span>
+          <span class="tag">Meshing</span>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <h3>ROS 2 Robotic Scanning System</h3>
+        <p>
+          Design of a ROS 2-based architecture for robotic surface scanning,
+          including acquisition, segmentation, depth refinement, fusion, and mesh
+          generation.
+        </p>
+        <div class="tag-list">
+          <span class="tag">ROS 2</span>
+          <span class="tag">Action Server</span>
+          <span class="tag">RealSense</span>
+          <span class="tag">Robotics</span>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <h3>Hand-Eye Calibration with RealSense and KUKA</h3>
+        <p>
+          Integration of camera calibration and robot pose data to estimate
+          transformations between the camera and robotic arm coordinate systems.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Calibration</span>
+          <span class="tag">KUKA</span>
+          <span class="tag">RealSense</span>
+          <span class="tag">Transforms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-grid">
+      <div class="card experience-card">
+        <h3>Medical Robotics Engineering</h3>
+        <p>
+          Master's-level work in robotics, perception, control, and medical robotic
+          systems, with practical experience in research-oriented development.
+        </p>
+      </div>
+
+      <div class="card experience-card">
+        <h3>Robotic Perception Research</h3>
+        <p>
+          Experience with RGB-D cameras, segmentation, depth refinement,
+          reconstruction pipelines, and experimental validation of 3D scanning systems.
+        </p>
+      </div>
+
+      <div class="card experience-card">
+        <h3>Robot Platform Integration</h3>
+        <p>
+          Practical work with ROS 2, RealSense cameras, KUKA robotic arms,
+          calibration workflows, and real robotic system setup.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="card">
+      <p>
+        I am open to research, internship, and robotics engineering opportunities
+        related to medical robotics, perception, and robotic system integration.
+      </p>
+
+      <div class="buttons">
+        <a href="mailto:ali0slman27@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://github.com/alisalman626" class="btn btn-secondary" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/" class="btn btn-secondary" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ali Salman. Built with HTML, CSS, and GitHub Pages.</p>
+  </footer>
+
 </body>
 </html>
