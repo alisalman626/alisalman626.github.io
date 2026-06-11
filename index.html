@@ -403,6 +403,40 @@
       color: var(--accent);
       font-weight: 800;
     }
+    .platform-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    
+    .platform-image-card {
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .platform-image {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .platform-bottom {
+      margin-top: 20px;
+    }
+    
+    @media (max-width: 850px) {
+      .platform-layout {
+        grid-template-columns: 1fr;
+      }
+    
+      .platform-image {
+        height: auto;
+        min-height: 0;
+      }
+    }
 
     .contact-card {
       text-align: center;
@@ -853,31 +887,44 @@
         <h2 class="section-title">Robots & Platforms</h2>
         <p class="section-subtitle">Robotic and sensing platforms I have worked with in academic, research, and engineering projects.</p>
 
-        <div class="grid-3">
+        <div class="platform-layout">
           <div class="card tool-card">
             <h3>Robotic Arms</h3>
             <ul>
               <li>KUKA LBR Med7</li>
               <li>KUKA iiwa 14</li>
               <li>MoveIt-based planning workflows</li>
+              <li>Robot-camera integration</li>
+              <li>Hand-eye calibration workflows</li>
             </ul>
           </div>
+        
+          <div class="card platform-image-card">
+            <img src="images/kuka.png" alt="KUKA robotic arm platform used for robotic perception and surface reconstruction" class="platform-image" />
+          </div>
+        </div>
+        
+        <div class="grid-2 platform-bottom">
           <div class="card tool-card">
             <h3>Sensing & Vision</h3>
             <ul>
               <li>Intel RealSense RGB-D cameras</li>
               <li>Endoscopic-image simulation projects</li>
               <li>Medical MRI-derived anatomical data</li>
+              <li>RGB-D scanning and point-cloud reconstruction</li>
             </ul>
           </div>
+        
           <div class="card tool-card">
             <h3>Mechatronic Systems</h3>
             <ul>
               <li>Self-balancing robot</li>
               <li>Planar haptic robot</li>
               <li>Embedded control platforms</li>
+              <li>MATLAB / Simulink control experiments</li>
             </ul>
           </div>
+        </div>
         </div>
       </div>
     </section>
