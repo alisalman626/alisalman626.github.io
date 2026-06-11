@@ -337,6 +337,24 @@
       flex-direction: column;
       min-height: 100%;
     }
+    .project-image {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+    
+    .project-video {
+      width: 100%;
+      max-height: 260px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
 
     .project-card .label {
       color: var(--muted-2);
@@ -675,6 +693,14 @@
 
           <div class="card project-card">
             <div class="label">Medical Robotics</div>
+            <video class="project-video" controls>
+              <source src="videos/figure1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video class="project-video" controls>
+              <source src="videos/figure2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
             <h3>Medical Robot Registration Course Project</h3>
             <p>
               Implemented a simulation pipeline to guide a robotic surgical tool toward a target defined in endoscopic images.
